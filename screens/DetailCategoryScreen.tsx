@@ -1,23 +1,16 @@
-import {View, StyleSheet, FlatList} from "react-native";
-import TitleComponents from "../components/TitleComponents";
+import {View, StyleSheet, Text} from "react-native";
 
-export const TITLE_LIST : string[] = [
-  "Title 1",
-  "Title 2",
-  "Title 8",
-]
-
-export default function DetailCategoryScreen() {
+export default function DetailCategoryScreen({ route }) {
+  const { title } = route.params;
     return (
       <View style={styles.container}>
-        <FlatList data={TITLE_LIST} renderItem={({item}) => <TitleComponents title={item} />}
-                keyExtractor={(item: string) => item}/>
+        <Text>{title}</Text>
       </View>
     )
   };
   
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      
     },
   });
