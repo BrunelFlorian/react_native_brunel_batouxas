@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { IconButton, Menu } from 'react-native-paper';
+import { IconButton, Menu, PaperProvider } from 'react-native-paper';
 
 export default function MenuComponents() {
     const [visible, setVisible] = useState(false);
@@ -12,14 +12,16 @@ export default function MenuComponents() {
     };
     return (
         <View style={{ height: '100%', alignItems: 'center', justifyContent: 'center' }}>
-            <Menu
-                visible={visible}
-                anchor={<IconButton icon="dots-vertical" onPress={showMenu}/>}
-                onRequestClose={hideMenu}
-            >
-                <Menu.Item>Supprimer</Menu.Item>
-                <Menu.Item>Supprimer</Menu.Item>
-            </Menu>
+            <PaperProvider>
+                <Menu
+                    visible={visible}
+                    anchor={<IconButton icon="dots-vertical" onPress={showMenu}/>}
+                    onDismiss={hideMenu}
+                >
+                    <Menu.Item onPress={() => {}} title="Duplicate" />
+                    <Menu.Item onPress={() => {}} title="Supprimer" />
+                </Menu>
+            </PaperProvider>
         </View>
     )
 };
