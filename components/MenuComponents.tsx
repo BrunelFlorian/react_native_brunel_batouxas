@@ -11,7 +11,7 @@ export default function MenuComponents() {
         setVisible(true);
     };
     return (
-        <View style={{ height: '100%', alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ flex : 1 }}>
             <PaperProvider>
                 <Menu
                     visible={visible}
