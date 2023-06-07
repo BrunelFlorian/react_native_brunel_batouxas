@@ -1,10 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import BottomNavigation from './navigation/BottomNavigation';
+import { PaperProvider } from 'react-native-paper';
+import { DefaultTheme } from '@react-navigation/native';
+
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  },
+};
 
 export default function App() {
   return (
-    <BottomNavigation />
+    <PaperProvider theme={theme}>
+      <BottomNavigation />
+    </PaperProvider>
   );
 }
 

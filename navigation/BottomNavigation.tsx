@@ -8,10 +8,11 @@ export default function BottomNavigation() {
     const BottomTabNavigator = createBottomTabNavigator();
     return (
         <NavigationContainer>
-            <BottomTabNavigator.Navigator initialRouteName="Home">
+            <BottomTabNavigator.Navigator>
                 <BottomTabNavigator.Screen name="Home" component={StackNavigation}
                                            options={{
                                                title: 'Home',
+                                               headerShown: false,
                                            }}/>
                 <BottomTabNavigator.Screen name="Home2" component={HomeScreen2}
                                            options={{
