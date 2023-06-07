@@ -1,8 +1,10 @@
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import BottomNavigation from './navigation/BottomNavigation';
 import { PaperProvider } from 'react-native-paper';
 import { DefaultTheme } from '@react-navigation/native';
-
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './assets/redux/store';
 
 const theme = {
   ...DefaultTheme,
@@ -15,9 +17,11 @@ const theme = {
 
 export default function App() {
   return (
-    <PaperProvider theme={theme}>
-      <BottomNavigation />
-    </PaperProvider>
+    <Provider store={store}>
+      <PaperProvider theme={theme}>
+        <BottomNavigation />
+      </PaperProvider>
+    </Provider>
   );
 }
 
