@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "../screens/HomeScreen";
-import HomeScreen2 from "../screens/HomeScreen2";
+import DetailScreen from "../screens/DetailScreen";
 import StackNavigation from "./StackNavigation";
 
 export default function BottomNavigation() {
@@ -14,7 +13,7 @@ export default function BottomNavigation() {
                                                title: 'Home',
                                                headerShown: false,
                                            }}/>
-                <BottomTabNavigator.Screen name="Home2" component={HomeScreen2}
+                <BottomTabNavigator.Screen name="Home2" component={DetailScreen}
                                            options={{
                                                title: 'Home2',
                                            }}/>
