@@ -1,13 +1,14 @@
-import { Category } from "../models/Category";
+import { ListProduct } from "../models/ListProduct";
+import { Product } from "../models/Product";
 
-export const CATEGORIES_DATA: Category[] = [
-  new Category(1, "Fruits"),
-  new Category(2, "Vegetables"),
-  new Category(3, "Grains"),
-  new Category(4, "Meat"),
-  new Category(5, "Dairy"),
-  new Category(6, "Beverages"),
-  new Category(7, "Condiments"),
-  new Category(8, "Confections"),
+const list = [
+  new Product("id1prod", "Apple", "Description Apple", "Fruits" ),
+  new Product("id2prod", "Orange", "Description Orange", "Fruits" ),
+];
+
+export const LISTPRODUCT_DATA: ListProduct[] = [
+  new ListProduct("id1","Fruits", list),
+  new ListProduct("id2","Vegetables", list),
+  new ListProduct("id3","Meat", list),
 ];
 
