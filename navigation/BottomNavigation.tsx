@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import DetailScreen from "../screens/DetailScreen";
+import DetailScreen from "../screens/DetailProduct";
 import StackNavigation from "./StackNavigation";
 
 export default function BottomNavigation() {

@@ -8,15 +8,12 @@ type TitleListItemProps = {
     title: string;
 }
 
-export default function CategorieItemComponents(props: TitleListItemProps) {
+export default function ProductItemComponents(props: TitleListItemProps) {
     const navigation = useNavigation();
 
     const onPressItem = (item: string) => {
-        console.log(item);
         navigation.navigate('DetailCategory', {options: {title: item}, title: item});
-        // Faites quelque chose avec l'élément (item) cliqué
-      
-        }
+    }
     return (
         <Card
         onPress={() => onPressItem(props.title)}
