@@ -1,14 +1,18 @@
 import React from 'react';
 import { View, Button } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { saveProduct } from '../assets/redux/actions/actionSaveProduct';
 
-const handleClic = () => {
-  console.log("Create product");
-};
-  
 export default function CreateProductComponents() {
+  const dispatch = useDispatch();
+
+  const handleSaveProduct = () => {
+    dispatch(saveProduct());
+  };
+
   return (
     <View>
-      <Button title="Create product" onPress={handleClic} />
+      <Button title="Save product" onPress={handleSaveProduct} />
     </View>
-  )
+  );
 };

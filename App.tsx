@@ -1,9 +1,12 @@
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import BottomNavigation from './navigation/BottomNavigation';
+import { Provider } from 'react-redux';
 
 export default function App() {
   return (
+    <Provider store={store}>
       <BottomNavigation />
+    </Provider>
   );
 }
 
