@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import BottomNavigation from './navigation/BottomNavigation';
 import { Provider } from 'react-redux';
+import store from './assets/redux/store';
 
 export default function App() {
   return (
