@@ -12,7 +12,6 @@ export default function MenuComponents() {
     };
     return (
         <View style={{ flex : 1 }}>
-            <PaperProvider>
                 <Menu
                     visible={visible}
                     anchor={<IconButton icon="dots-vertical" onPress={showMenu}/>}
@@ -21,7 +20,6 @@ export default function MenuComponents() {
                     <Menu.Item onPress={() => {}} title="Duplicate" />
                     <Menu.Item onPress={() => {}} title="Supprimer" />
                 </Menu>
-            </PaperProvider>
         </View>
     )
 };
