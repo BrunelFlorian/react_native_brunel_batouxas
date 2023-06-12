@@ -1,6 +1,11 @@
-export const saveProduct = () => {
+export const saveProduct = (name: string, description: string, category: string) => {
     return {
-      type: 'SAVE_PRODUCT',
+      type: 'ADD_PRODUCT',
+      payload: {
+        name,
+        description,
+        category
+      }
     };
   };
   

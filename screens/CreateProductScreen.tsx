@@ -1,19 +1,12 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet } from "react-native";
+import * as React from 'react'
 import TitleComponents from "../components/TitleComponents";
-import InputComponents from "../components/InputComponents";
 import CreateProductComponents from "../components/CreateProductComponents";
-
-export const INPUT_LIST : string[] = [
-  "Product name",
-  "Product description",
-]
 
 export default function CreateProductScreen() {
     return (
       <View style={styles.container}>
         <TitleComponents title="Add a product" />
-        <FlatList data={INPUT_LIST} renderItem={({item}) => <InputComponents placeholder={item} />}
-                keyExtractor={(item: string) => item}/>
         <CreateProductComponents />
       </View>
     )

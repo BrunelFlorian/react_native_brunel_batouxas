@@ -1,17 +1,21 @@
-import { LISTPRODUCT_DATA } from '../../../data/stub';
+import { v4 as uuidv4 } from 'uuid';
+import { LISTPRODUCT_DATA, PRODUCT_DATA } from '../../../data/stub';
+import { Product } from "../../../models/Product";
+
 const initialState = {
-    listProduct: LISTPRODUCT_DATA,
+  listProduct: LISTPRODUCT_DATA,
+  products: PRODUCT_DATA
 };
   
     // @ts-ignore
   const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'SAVE_PRODUCT':
+        case 'ADD_PRODUCT':
           // @ts-ignore
-          // Gérer sauvegarde produit
-          console.log('Save product');
-          return state;
-
+          const newListProduct = [...state.products, new Product(uuidv4(), action.payload.name, action.payload.description, action.payload.category)];
+          console.log(newListProduct);
+          
+          return { ...state, products: newListProduct };
         case 'DELETE_PRODUCT':
           // @ts-ignore
            // Gérer suppression produit
