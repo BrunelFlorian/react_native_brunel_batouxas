@@ -15,8 +15,8 @@ export default function ListListCourseItemComponents(props: ListListCourseItemPr
     
     const navigation = useNavigation();
 
-    const onPressItem = (title: string, products:Product[]) => {
-        navigation.navigate('DetailListProduct', {"title": title, "products": products} );
+    const onPressItem = (title: string, products:Product[], idList: string) => {
+        navigation.navigate('DetailListProduct', {"title": title, "products": products, "idList": idList} );
     }
 
         const [visibleDialogDelete, setVisibleDialogDelete] = React.useState(false);
@@ -31,7 +31,7 @@ export default function ListListCourseItemComponents(props: ListListCourseItemPr
     return (
         <View>
             <Card
-            onPress={() => onPressItem(props.title, props.listProduct.products)}
+            onPress={() => onPressItem(props.title, props.listProduct.products, props.listProduct.id)}
             >
                 <Card.Title
                     title={props.title}

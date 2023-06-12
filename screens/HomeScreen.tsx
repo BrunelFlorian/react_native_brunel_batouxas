@@ -4,14 +4,16 @@ import { ScrollView } from "react-native-gesture-handler";
 import { LISTPRODUCT_DATA } from "../data/stub";
 import { Category } from "../models/Category";
 import ListListCourseItemComponents from "../components/ListListCourseItemComponents";
+import {useSelector} from 'react-redux';
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+  const listProduct = useSelector(state => state.appReducer.listProduct);
  
     return (
       <View style={styles.container}>
       <ScrollView>
-        <FlatList data={LISTPRODUCT_DATA} renderItem={({item}) =><ListListCourseItemComponents title={item.name} listProduct={item} />}
+        <FlatList data={listProduct} renderItem={({item}) =><ListListCourseItemComponents title={item.name} listProduct={item} />}
                 keyExtractor={(item: Category) => item.name}/>
       </ScrollView>
         <Button title="Go to Detail Category Screen" onPress={() => navigation.navigate()} />

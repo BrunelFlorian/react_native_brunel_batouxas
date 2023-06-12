@@ -4,13 +4,17 @@ import { StyleSheet, Text, View } from "react-native";
 import { Button, Card, Dialog, PaperProvider, Portal } from "react-native-paper";
 import { Avatar, IconButton } from "react-native-paper";
 import { Product } from "../models/Product";
+import { useDispatch } from "react-redux";
+import { deleteProduct } from "../assets/redux/actions/actionDeleteProduct";
 
 type TitleListItemProps = {
+    idList: string;
     title: string;
     product: Product;
 }
 
 export default function ListProductItemComponents(props: TitleListItemProps) {
+    const dispatch = useDispatch();
     const navigation = useNavigation();
 
     const onPressItem = (title: string, product:Product) => {
@@ -24,6 +28,10 @@ export default function ListProductItemComponents(props: TitleListItemProps) {
         
         setVisibleDialogDelete(true);
     };
+
+    const handleDeleteProduct = (idList: string, product: Product) => {
+        dispatch(deleteProduct(idList, product));
+      };
     
     const hideDialog = () => setVisibleDialogDelete(false);
     return (
@@ -34,7 +42,7 @@ export default function ListProductItemComponents(props: TitleListItemProps) {
                 <Card.Title
                     title={props.title}
                     left={(props) => <Avatar.Icon {...props} icon="folder" />}
-                    right={(props) => <IconButton icon="delete" onPress={() => showDialog()} />}
+                    right={(prop) => <IconButton icon="delete" onPress={() => handleDeleteProduct(props.idList, props.product)} />}
                 />
             </Card>
           </View>
