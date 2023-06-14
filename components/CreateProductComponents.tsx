@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Button } from 'react-native';
+import { View, /*Button,*/ StyleSheet } from 'react-native';
+import { Button } from 'react-native-paper';
 import { useSelector, useDispatch } from 'react-redux';
 import { saveProduct } from '../assets/redux/actions/actionSaveProduct';
 import InputComponents from './InputComponents';
 import { LISTCATEGORY_DATA } from '../data/stub';
+import { green100 } from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
 
 export default function CreateProductComponents() {
   const dispatch = useDispatch();
@@ -16,17 +18,31 @@ export default function CreateProductComponents() {
   };
 
   return (
-    <View>
+    <View style={styles.centered}>
       <InputComponents
-        inputNamePlaceholder="Name"
-        inputDescriptionPlaceholder="Description"
-        inputCategoryPlaceholder="Category"
+        inputNameLabel="Name"
+        inputDescriptionLabel="Description"
+        selectCategoryLabel="Category"
         listCategory={LISTCATEGORY_DATA}
         onNameValueChange={setProductName}
         onDescriptionValueChange={setProductDescription}
         onSelectCategoryValueChange={setProductCategory}
       />
-      <Button title="Save product" onPress={handleSaveProduct} />
+      <Button style={styles.button} mode="contained" onPress={handleSaveProduct}>
+        Save product
+      </Button>
     </View>
-  );
+  )
 };
+
+const styles = StyleSheet.create({
+  centered: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  button: {
+    marginTop: 50,
+    width: 200,
+    borderWidth: 2,
+  },
+});

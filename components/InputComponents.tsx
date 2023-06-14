@@ -1,12 +1,13 @@
 import { useState} from "react";
-import { StyleSheet, View, TextInput } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { TextInput } from "react-native-paper";
 import DropDown from "react-native-paper-dropdown";
 import { Category } from "../models/Category";
 
 type InputListItemProps = {
-    inputNamePlaceholder: string;
-    inputDescriptionPlaceholder: string;
-    inputCategoryPlaceholder: string;
+    inputNameLabel: string;
+    inputDescriptionLabel: string;
+    selectCategoryLabel: string;
     listCategory: Category[];
     onNameValueChange: (value: string) => void;
     onDescriptionValueChange: (value: string) => void;
@@ -21,37 +22,37 @@ export default function InputComponents(props: InputListItemProps) {
     const newListCategory = props.listCategory.map(mapCategoryToDropdownItem);
     return (
         <View style={styles.centered}>
-            <TextInput
-                style={styles.input}
-                placeholder={props.inputNamePlaceholder}
-                value={inputNameValue}
-                onChangeText={(e) => {
-                    setNameValue(e);
-                    props.onNameValueChange(e);
-                  }}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder={props.inputDescriptionPlaceholder}
-                value={inputDescriptionValue}
-                onChangeText={(e) => {
-                    setDescriptionValue(e);
-                    props.onDescriptionValueChange(e);
-                  }}
-            />
+          <TextInput
+              style={styles.fields}
+              label={props.inputNameLabel}
+              value={inputNameValue}
+              onChangeText={(e) => {
+                  setNameValue(e);
+                  props.onNameValueChange(e);
+                }}
+          />
+          <TextInput
+              style={styles.fields}
+              label={props.inputDescriptionLabel}
+              value={inputDescriptionValue}
+              onChangeText={(e) => {
+                  setDescriptionValue(e);
+                  props.onDescriptionValueChange(e);
+                }}
+          />
             <DropDown
-              label={"Category"}
-              mode={"outlined"}
-              visible={showDropDown}
-              showDropDown={() => setShowDropDown(true)}
-              onDismiss={() => setShowDropDown(false)}
-              value={selectCategoryValue}
-              setValue={(value) => {
-                setCategoryValue(value);
-                props.onSelectCategoryValueChange(value);
-              }}
-              list={newListCategory}
-            />
+            label={props.selectCategoryLabel}
+            mode={"outlined"}
+            visible={showDropDown}
+            showDropDown={() => setShowDropDown(true)}
+            onDismiss={() => setShowDropDown(false)}
+            value={selectCategoryValue}
+            setValue={(value) => {
+              setCategoryValue(value);
+              props.onSelectCategoryValueChange(value);
+            }}
+            list={newListCategory}
+          />
         </View>
     )
 };
@@ -67,13 +68,7 @@ const styles = StyleSheet.create({
     centered: {
         alignItems: "center"
     },
-    input: {
-        height: 55,
-        margin: 12,
-        fontSize: 20,
-        borderWidth: 2,
-        borderColor: "grey",
-        borderRadius: 10,
-        padding: 5,
+    fields: {
+      margin: 10,
     }
 });
