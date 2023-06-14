@@ -16,7 +16,7 @@ export default function HomeScreen() {
         <FlatList data={listProduct} renderItem={({item}) =><ListListCourseItemComponents title={item.name} listProduct={item} />}
                 keyExtractor={(item: Category) => item.name}/>
       </ScrollView>
-        <Button title="Go to Detail Category Screen" onPress={() => navigation.navigate()} />
+        <Button title="Add List" onPress={() => navigation.navigate("CreateList")} />
       </View>
     )
   };

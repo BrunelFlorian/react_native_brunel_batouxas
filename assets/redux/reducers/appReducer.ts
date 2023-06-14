@@ -1,6 +1,8 @@
 import uuid from 'react-native-uuid';
 import { LISTPRODUCT_DATA, PRODUCT_DATA } from '../../../data/stub';
 import { Product } from "../../../models/Product";
+import { List } from 'react-native-paper';
+import { ListProduct } from '../../../models/ListProduct';
 
 const initialState = {
   listProduct: LISTPRODUCT_DATA,
@@ -36,6 +38,11 @@ const initialState = {
             (listProduct) => listProduct.id !== action.payload[0]
           );
           return { ...state, listProduct: newListProducts };
+
+        case 'ADD_LIST_PRODUCT':
+          // @ts-ignore
+          const newListProductsAdd = [...state.listProduct, new ListProduct(uuid.v4(), action.payload.name, [])];
+          return { ...state, listProduct: newListProductsAdd };
       default:
         return state;
     }
