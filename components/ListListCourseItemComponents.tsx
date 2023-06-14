@@ -5,6 +5,8 @@ import { Button, Card, Dialog, PaperProvider, Portal } from "react-native-paper"
 import { Avatar, IconButton } from "react-native-paper";
 import { Product } from "../models/Product";
 import { ListProduct } from "../models/ListProduct";
+import { useDispatch } from "react-redux";
+import { deleteListProduct } from "../assets/redux/actions/actionDeleteListProduct";
 
 type ListListCourseItemProps = {
     title: string;
@@ -12,35 +14,28 @@ type ListListCourseItemProps = {
 }
 
 export default function ListListCourseItemComponents(props: ListListCourseItemProps) {
-    
+    const dispatch = useDispatch();
     const navigation = useNavigation();
 
-    const onPressItem = (title: string, products:Product[], idList: string) => {
-        navigation.navigate('DetailListProduct', {"title": title, "products": products, "idList": idList} );
+    const onPressItem = (listProduct: ListProduct) => {
+        navigation.navigate('DetailListProduct', {"title": listProduct.name, "listProduct": listProduct} );
     }
 
-        const [visibleDialogDelete, setVisibleDialogDelete] = React.useState(false);
-
-        const showDialog = () => {
-            console.log("Delete");
-            
-            setVisibleDialogDelete(true);
-        };
-      
-        const hideDialog = () => setVisibleDialogDelete(false);
+    const handleDeleteProduct = (idList: string) => {
+        dispatch(deleteListProduct(idList));
+    };
     return (
         <View>
             <Card
-            onPress={() => onPressItem(props.title, props.listProduct.products, props.listProduct.id)}
+            onPress={() => onPressItem(props.listProduct)}
             >
                 <Card.Title
                     title={props.title}
                     left={(props) => <Avatar.Icon {...props} icon="folder" />}
-                    right={(props) => <IconButton icon="delete" onPress={() => showDialog()} />}
+                    right={(prop) => <IconButton icon="delete" onPress={() => handleDeleteProduct(props.listProduct.id)} />}
                 />
             </Card>
           </View>
-        
     )
 };
 

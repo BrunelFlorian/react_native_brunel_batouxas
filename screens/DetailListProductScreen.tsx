@@ -1,11 +1,12 @@
 import {View, StyleSheet, Text, ScrollView, FlatList} from "react-native";
+import React, { useState } from 'react';
 import { Product } from "../models/Product";
 import ListProductItemComponents from "../components/ListProductItemComponents";
 
 export default function DetailListProductScreen({ route }) {
-  const { products, idList } = route.params;
-  console.log(idList);
-  
+  const { listProduct } = route.params;
+  const idList = listProduct.id;
+  const [products] = useState(listProduct.products);
   
     return (
       <View style={styles.container}>

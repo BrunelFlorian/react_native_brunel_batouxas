@@ -19,20 +19,23 @@ const initialState = {
         case 'DELETE_PRODUCT':
           // @ts-ignore
            // Gérer suppression produit
-      const listProducts = state.listProduct.map((listProduct) => {
-        if (listProduct.id === action.payload[0]) {
-          console.log('identique');
+          const listProducts = state.listProduct.map((listProduct) => {
+            if (listProduct.id === action.payload[0]) {
+              const newProducts = listProduct.products.filter(
+                (product) => product.id !== action.payload[1].id
+              );
+              return { ...listProduct, products: newProducts };
+            }
+            return listProduct;
+          });
+          return { ...state, listProduct: listProducts };
 
-          const newProducts = listProduct.products.filter(
-            (product) => product.id !== action.payload[1].id
+        case 'DELETE_LIST_PRODUCT':
+          // @ts-ignore
+          const newListProducts = state.listProduct.filter(
+            (listProduct) => listProduct.id !== action.payload[0]
           );
-          return { ...listProduct, products: newProducts };
-        }
-        return listProduct;
-      });
-      console.log(listProducts);
-      
-      return { ...state, listProduct: listProducts };
+          return { ...state, listProduct: newListProducts };
       default:
         return state;
     }

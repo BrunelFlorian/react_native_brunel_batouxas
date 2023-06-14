@@ -21,19 +21,10 @@ export default function ListProductItemComponents(props: TitleListItemProps) {
         navigation.navigate('DetailProduct', {"product": product} );
     }
 
-    const [visibleDialogDelete, setVisibleDialogDelete] = React.useState(false);
-
-    const showDialog = () => {
-        console.log("Delete");
-        
-        setVisibleDialogDelete(true);
-    };
-
     const handleDeleteProduct = (idList: string, product: Product) => {
         dispatch(deleteProduct(idList, product));
       };
     
-    const hideDialog = () => setVisibleDialogDelete(false);
     return (
         <View>
             <Card
