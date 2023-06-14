@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import uuid from 'react-native-uuid';
 import { LISTPRODUCT_DATA, PRODUCT_DATA } from '../../../data/stub';
 import { Product } from "../../../models/Product";
 
@@ -12,7 +12,7 @@ const initialState = {
     switch (action.type) {
         case 'ADD_PRODUCT':
           // @ts-ignore
-          const newListProduct = [...state.products, new Product(uuidv4(), action.payload.name, action.payload.description, action.payload.category)];
+          const newListProduct = [...state.products, new Product(uuid.v4(), action.payload.name, action.payload.description, action.payload.category)];
           console.log(newListProduct);
           
           return { ...state, products: newListProduct };

@@ -1,11 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
+import uuid from 'react-native-uuid';
 import { ListProduct } from "../models/ListProduct";
 import { Product } from "../models/Product";
 import { Category } from "../models/Category";
 
 export const PRODUCT_DATA: Product[] = [
-  new Product(uuidv4(), "Apple", "Description Apple", "Fruits"),
-  new Product(uuidv4(), "Orange", "Description Orange", "Fruits"),
+  new Product(uuid.v4(), "Apple", "Description Apple", "Fruits"),
+  new Product(uuid.v4(), "Orange", "Description Orange", "Fruits"),
 ];
 
 export const LISTPRODUCT_DATA: ListProduct[] = [
