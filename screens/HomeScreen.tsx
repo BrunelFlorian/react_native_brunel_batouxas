@@ -10,19 +10,19 @@ export default function HomeScreen() {
   const navigation = useNavigation();
   const listProduct = useSelector(state => state.appReducer.listProduct);
  
-    return (
-      <View style={styles.container}>
-      <ScrollView>
-        <FlatList data={listProduct} renderItem={({item}) =><ListListCourseItemComponents title={item.name} listProduct={item} />}
-                keyExtractor={(item: Category) => item.name}/>
-      </ScrollView>
-        <Button title="Go to Detail Category Screen" onPress={() => navigation.navigate()} />
-      </View>
-    )
-  };
+  return (
+    <View style={styles.container}>
+    <ScrollView>
+      <FlatList data={listProduct} renderItem={({item}) =><ListListCourseItemComponents title={item.name} listProduct={item} />}
+              keyExtractor={(item: Category) => item.name}/>
+    </ScrollView>
+      <Button title="Go to Detail Category Screen" onPress={() => navigation.navigate()} />
+    </View>
+  )
+};
   
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
