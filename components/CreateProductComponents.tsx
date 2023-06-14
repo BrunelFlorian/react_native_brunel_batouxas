@@ -20,15 +20,15 @@ export default function CreateProductComponents() {
   return (
     <View style={styles.centered}>
       <InputComponents
-        inputNamePlaceholder="Name"
-        inputDescriptionPlaceholder="Description"
-        inputCategoryPlaceholder="Category"
+        inputNameLabel="Name"
+        inputDescriptionLabel="Description"
+        selectCategoryLabel="Category"
         listCategory={LISTCATEGORY_DATA}
         onNameValueChange={setProductName}
         onDescriptionValueChange={setProductDescription}
         onSelectCategoryValueChange={setProductCategory}
       />
-      <Button style={styles.button} onPress={handleSaveProduct}>
+      <Button style={styles.button} mode="contained" onPress={handleSaveProduct}>
         Save product
       </Button>
     </View>
@@ -42,9 +42,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 50,
-    backgroundColor: '#ffffff',
     width: 200,
     borderWidth: 2,
-    borderColor: '#000000',
   },
 });
