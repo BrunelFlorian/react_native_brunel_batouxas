@@ -15,10 +15,6 @@ export default function DetailProductComponents(props: DetailProductComponents) 
                 <Card.Content>
                 <Text variant="bodyMedium">{props.product.description}</Text>
                 </Card.Content>
-                
-                <Card.Actions>
-                <Button>Modifier</Button>
-                </Card.Actions>
             </Card>
     )
 };

@@ -31,7 +31,7 @@ export default function ProductListComponents(props: TitleListItemProps) {
                 <Card.Title
                     title={props.product.name}
                     left={(props) => <Avatar.Icon {...props} icon="folder" />}
-                    // right={(prop) => <IconButton icon="delete" onPress={() => handleDeleteProduct(props.idList, props.product)} />}
+                    right={(prop) => <IconButton icon="magnify" onPress={() => navigation.navigate("DetailProduct", {product: props.product} )} />}
                 />
             </Card>
           </View>
