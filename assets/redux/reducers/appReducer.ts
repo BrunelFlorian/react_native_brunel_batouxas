@@ -43,6 +43,17 @@ const initialState = {
           // @ts-ignore
           const newListProductsAdd = [...state.listProduct, new ListProduct(uuid.v4(), action.payload.name, [])];
           return { ...state, listProduct: newListProductsAdd };
+
+        case 'ADD_PRODUCT_TO_LIST':
+          // @ts-ignore
+          const newListProductsAddProduct = state.listProduct.map((listProduct) => {
+            if (listProduct.id === action.payload.listProductId) {
+              const newProducts = [...listProduct.products, action.payload.product];
+              return { ...listProduct, products: newProducts };
+            }
+            return listProduct;
+          });
+          return { ...state, listProduct: newListProductsAddProduct };
       default:
         return state;
     }
