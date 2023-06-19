@@ -1,7 +1,6 @@
 import {View, StyleSheet, FlatList, Button} from "react-native";
 import { useNavigation, useTheme } from '@react-navigation/native';
 import { ScrollView } from "react-native-gesture-handler";
-import { LISTPRODUCT_DATA } from "../data/stub";
 import { Category } from "../models/Category";
 import ListListCourseItemComponents from "../components/ListListCourseItemComponents";
 import {useSelector} from 'react-redux';
