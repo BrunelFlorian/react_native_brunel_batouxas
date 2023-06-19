@@ -1,7 +1,4 @@
-import { View, StyleSheet, FlatList } from "react-native";
-import TitleComponents from "../components/TitleComponents";
-import InputComponents from "../components/InputComponents";
-import CreateProductComponents from "../components/CreateProductComponents";
+import { View, StyleSheet } from "react-native";
 import DetailProductComponents from "../components/DetailProductComponents";
 
 export default function DetailProduct({ route }) {

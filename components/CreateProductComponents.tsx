@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { saveProduct } from '../assets/redux/actions/actionSaveProduct';
 import InputComponents from './InputComponents';
 import { LISTCATEGORY_DATA } from '../data/stub';
-import { green100 } from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
 
 export default function CreateProductComponents() {
   const dispatch = useDispatch();
