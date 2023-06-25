@@ -1,0 +1,29 @@
+Page d'accueil :
+
+Affichez un écran de bienvenue avec le logo et le nom de l'application.
+Ajoutez des boutons pour accéder aux fonctionnalités principales de l'application, telles que la liste des produits, l'ajout d'un nouveau produit, etc.
+Liste des produits :
+
+Affichez une liste de produits avec leurs détails, tels que le nom, la description et la catégorie.
+Permettez à l'utilisateur de faire défiler la liste et de visualiser tous les produits disponibles.
+Ajoutez des boutons ou des icônes pour permettre à l'utilisateur de modifier ou de supprimer un produit.
+Ajout d'un produit :
+
+Affichez un formulaire pour permettre à l'utilisateur d'ajouter un nouveau produit.
+Incluez des champs tels que le nom, la description et la catégorie pour que l'utilisateur puisse saisir les détails du produit.
+Ajoutez un bouton pour valider l'ajout du produit.
+Modification d'un produit :
+
+Affichez un formulaire pré-rempli avec les détails d'un produit existant pour permettre à l'utilisateur de les modifier.
+Affichez les champs tels que le nom, la description et la catégorie avec les valeurs actuelles du produit.
+Permettez à l'utilisateur de modifier les champs et d'enregistrer les modifications.
+Gestion des listes :
+
+Ajoutez une fonctionnalité pour permettre à l'utilisateur de créer et de gérer des listes, telles que des listes d'envies ou de courses.
+Affichez les listes disponibles avec leurs noms.
+Permettez à l'utilisateur de créer une nouvelle liste, de modifier le nom d'une liste existante et de supprimer une liste.
+Affichage des listes :
+
+Affichez les produits présents dans une liste spécifique.
+Permettez à l'utilisateur de faire défiler les produits de la liste et d'afficher leurs détails.
+Ajoutez des boutons ou des icônes pour permettre à l'utilisateur de modifier ou de supprimer un produit de la liste.

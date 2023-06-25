@@ -14,8 +14,8 @@ const initialState = {
     switch (action.type) {
         case 'ADD_PRODUCT':
           // @ts-ignore
-          const newListProduct = [...state.products, new Product(uuid.v4(), action.payload.name, action.payload.description, action.payload.category)];
-          console.log(newListProduct);
+          const newProduct = new Product(uuid.v4(), action.payload.name, action.payload.description, action.payload.category);
+          const newListProduct = [...state.products, newProduct];
           
           return { ...state, products: newListProduct };
         case 'DELETE_PRODUCT':
