@@ -6,7 +6,7 @@ Ceci est une application React Native permettant de gérer des produits, notamme
 
 L'application propose les fonctionnalités suivantes :
 
-- Affichage de la liste des produits : vous pouvez visualiser tous les produits disponibles dans votre catalogue.
+- Affichage de la liste des produits : vous pouvez visualiser tous les produits disponibles dans votre catalogue, et vous pouvez ajouter un produit en favoris (stocké dans le local storage).
 - Ajout d'un nouveau produit : vous pouvez ajouter de nouveaux produits à votre catalogue en spécifiant leur nom, leur description et leur catégorie.
 - Modification d'un produit existant : vous pouvez mettre à jour les informations d'un produit existant, comme son nom, sa description ou sa catégorie.
 - Suppression d'un produit : vous pouvez supprimer un produit de votre catalogue.
@@ -80,6 +80,18 @@ Une fois l'application lancée, vous pouvez la tester dans votre navigateur web 
 
 Une fois l'application lancée, vous pouvez la tester sur votre téléphone en scannant le QR code affiché dans la console ou en utilisant un émulateur.
 
+## Lancer les tests
+
+Pour lancer les tests vous devez utiliser la commande suivante :
+```bash
+npm run test
+```
+ou
+```bash
+yarn test
+```
+
 ## Auteurs
+
 Brunel Florian : https://github.com/BrunelFlorian
 Batouxas Léo : https://github.com/leobatouxas
